@@ -1,11 +1,12 @@
 import ApiService from "@/services/api.service";
+import type {AxiosResponse} from "axios";
 
 class PokemonService extends ApiService {
     static url = 'https://pokeapi.co/api/v2/pokemon';
 
-    public async getList(page: number, limit: number) {
-        const offset = (page * limit);
-        const requestUrl = `${PokemonService.url}?offset=${offset}&limit=${limit}`;
+    public async getPokemon(id: number): Promise<AxiosResponse<any, any>> {
+        const requestUrl = `${PokemonService.url}/${id}`;
+
         return this.get(requestUrl);
     }
 }

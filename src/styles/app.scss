@@ -1,3 +1,23 @@
+@font-face {
+    font-family: 'pokemon';
+    src: url('@/assets/fonts/pokemon/PokemonSolid.ttf') format('truetype');
+}
+
+@import "~bootstrap/scss/bootstrap";
+
 @import "variables";
 @import "components";
 @import "views";
+
+#app {
+    grid-template-columns: 1fr !important;
+
+    .home-container {
+        text-align: center;
+        position: relative;
+
+        .pokeball {
+            max-width: 120px;
+        }
+    }
+}
